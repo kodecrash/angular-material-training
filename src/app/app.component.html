@@ -1,0 +1,35 @@
+<mat-checkbox>Check me!</mat-checkbox>
+
+<br/>
+<br/>
+
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group>
+
+<br/>
+<br/>
+<mat-icon inline="true">delete</mat-icon>
+
+<h2>Simple Material Form</h2>
+
+<form [formGroup]="form" class="example-container" (ngSubmit)="submitForm(form)">
+  <mat-form-field>
+    <input matInput placeholder="Input" formControlName="firstname">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea" formControlName="address"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select" formControlName="country">
+      <mat-option value="ar">Argentina</mat-option>
+      <mat-option value="in">India</mat-option>
+      <mat-option value="usa">USA</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

@@ -1,0 +1,12 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 40%;
+  }
+
+.example-container button {
+    width: 100px;
+}
