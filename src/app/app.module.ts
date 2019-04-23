@@ -9,12 +9,16 @@ import { VoteComponent } from './vote/vote.component';
 import { SimpleformComponent } from './simpleform/simpleform.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoService } from './services/todo.service';
+import { VoterComponent } from './voter/voter.component';
+import { Voter1Component } from './voter1/voter1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VoteComponent,
-    SimpleformComponent
+    SimpleformComponent,
+    VoterComponent,
+    Voter1Component
   ],
   imports: [
     BrowserModule,
