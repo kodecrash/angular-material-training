@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoService } from './services/todo.service';
 import { VoterComponent } from './voter/voter.component';
 import { Voter1Component } from './voter1/voter1.component';
+import { TodolistComponent } from './todolist/todolist.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { Voter1Component } from './voter1/voter1.component';
     VoteComponent,
     SimpleformComponent,
     VoterComponent,
-    Voter1Component
+    Voter1Component,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
