@@ -38,3 +38,14 @@ export class CustomComponent implements OnInit {
         this.save.emit(this.rowData);
     }
 }
+
+ rowUpdateSubject: BehaviorSubject<any>;
+  onRowUpdate$: Observable<any>;
+
+
+  constructor() { 
+
+    this.rowUpdateSubject = new BehaviorSubject(null);
+    this.onRowUpdate$ = this.rowUpdateSubject.asObservable();
+
+  }
