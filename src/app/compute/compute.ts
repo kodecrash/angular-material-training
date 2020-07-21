@@ -51,3 +51,52 @@ export class CustomComponent implements OnInit {
   }
 
  <input [(ngModel)]="rowData.quantity" [value]="rowData.quantity" (ngModelChange)="onModelChange()"/>
+   
+   
+   
+   tableSettings = {
+        hideSubHeader: true,
+        actions: {
+            edit: true,
+            delete: false,
+            add: false
+        },
+        columns: {
+            name: {
+                title: 'Name',
+                type: 'string',
+                sort: false
+            },
+            quantity: {
+              title: 'Quantity',
+              type: 'custom',
+              renderComponent: CustomComponent,
+               valuePrepareFunction: (value, row, cell) => {
+                // DATA FROM HERE GOES TO renderComponent
+                // return {
+                //   rows: this.cartData,
+                //   cellValue: value
+                // }
+                console.log(value)
+              },
+              sort: false,
+              editable: true,
+              onComponentInitFunction: (instance: any) => {
+                instance.save.subscribe(row => {
+                 // this.source.refresh();
+                });
+              }
+            },
+            price: {
+                title: 'Price',
+                type: 'number',
+                edit : true,
+                sort: false
+            },
+            total: {
+                title: 'Total',
+                type: 'number',
+                sort: false
+            }
+        }
+    };
