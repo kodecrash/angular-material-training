@@ -49,3 +49,5 @@ export class CustomComponent implements OnInit {
     this.onRowUpdate$ = this.rowUpdateSubject.asObservable();
 
   }
+
+ <input [(ngModel)]="rowData.quantity" [value]="rowData.quantity" (ngModelChange)="onModelChange()"/>
