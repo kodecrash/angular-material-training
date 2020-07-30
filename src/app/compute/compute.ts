@@ -100,3 +100,28 @@ export class CustomComponent implements OnInit {
             }
         }
     };
+
+
+exportToExcelMultiSheet($event) {
+     const fileName = 'test-8.xlsx';
+     let ws: XLSX.WorkSheet;
+	   let wb: XLSX.WorkBook;
+     wb = XLSX.utils.book_new();
+     this.data.forEach((data, index) => {
+       // ws = XLSX.utils.json_to_sheet(data['details']);
+	    
+        wb.SheetNames.push(data['categoryname']);
+      //  console.log([ ...data['details'][0]   ])
+        
+        var result = data['details'].map(o => Object.keys(o).map(k => o[k]));
+       // console.log(result)
+        ws = XLSX.utils.aoa_to_sheet(result);
+        // wb.Sheets
+        // XLSX.utils.
+        wb.Sheets[data['categoryname']] = ws;
+       // wb.Sheets.push()
+       // XLSX.utils.book_append_sheet(wb, ws, data['categoryname']);
+     });
+     console.log(wb)
+     	XLSX.writeFile(wb, fileName);
+   }
